@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Invo FIVE</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">MENÚ</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">MENÚ</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="#patrones">1. Patrones de Comunicación</a></li>
+        <li><a class="waves-effect" href="#despliegue">2. Despliegue y Orquestación</a></li>
+        <li><a class="waves-effect" href="#seguridad">3. Seguridad</a></li>
+        <li><a class="waves-effect" href="#datos">4. Gestión de Datos</a></li>
+        <li><a class="waves-effect" href="#costos">5. Costos Serverless</a></li>
+        <li><a class="waves-effect" href="#observabilidad">6. Observabilidad</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- Banner principal -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Arquitectura de microservicios y serverless</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">¿Sabías que el 80% de las startups desperdician recursos en arquitecturas monolíticas? Rompe el molde: diseña sistemas que crezcan contigo, no contra ti.</h5>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+    <div class="col s12 m7">
+    <h4 class="header">1. Patrones de comunicación</h4>
+    <div class="card horizontal">
+      <div class="card-image">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Síncrono vs. Asíncrono: Usa REST o gRPC para llamadas
+            directas; opta por eventos con Kafka o RabbitMQ para
+            flujos más flexibles y desacoplados.
+            Resiliencia: Implementa Circuit Breaker,
+            reintentos automáticos y Dead Letter Queues para 
+            manejar fallos sin afectar al sistema completo.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Más información</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sección 1 -->
+  <div class="container">
+    <div class="section">
+      <!-- Sección 1 -->
+      <div id="patrones" class="section scrollspy">
+        <h4>1. Patrones de Comunicación</h4>
+        <p>Contenido sobre comunicación entre microservicios...</p>
+      </div>
+
+      <!-- Sección 2 -->
+      <div id="despliegue" class="section scrollspy">
+        <h4>2. Despliegue y Orquestación</h4>
+        <p>Contenido sobre despliegue...</p>
+      </div>
+
+      <!-- Sección 3 -->
+      <div id="seguridad" class="section scrollspy">
+        <h4>3. Seguridad</h4>
+        <p>Contenido sobre seguridad...</p>
+      </div>
+
+      <!-- Sección 4 -->
+      <div id="datos" class="section scrollspy">
+        <h4>4. Gestión de Datos</h4>
+        <p>Contenido sobre datos...</p>
+      </div>
+
+      <!-- Sección 5 -->
+      <div id="costos" class="section scrollspy">
+        <h4>5. Costos Serverless</h4>
+        <p>Contenido sobre costos...</p>
+      </div>
+
+      <!-- Sección 6 -->
+      <div id="observabilidad" class="section scrollspy">
+        <h4>6. Observabilidad</h4>
+        <p>Contenido sobre monitoreo...</p>
+      </div>
+    </div> <!-- Cierre de div.section -->
+  </div> <!-- Cierre de div.container -->
+
+  <!-- Footer -->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
