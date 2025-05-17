@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Seguridad</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/styleSegurity.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Seguridad</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">MENÚ</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="index.html">Inicio</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">MENÚ</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="index.html">Inicio</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- =============== BANNER PRINCIPAL =============== -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <!-- Carrusel de imágenes -->
+      <div class="carousel">
+        <a class="carousel-item"><img src="img/carouse_1.png"></a>
+        <a class="carousel-item"><img src="img/carouse_2.png"></a>
+        <a class="carousel-item"><img src="img/carouse_3.png"></a>
+        <a class="carousel-item"><img src="img/carouse_4.png"></a>
+        <a class="carousel-item"><img src="img/carouse_5.png"></a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <br>
+    <h4>Seguridad en Arquitecturas Serverless y Microservicios</h4>
+    <div class="divider"></div>
+    <br>
+  </div>
+
+  <!-- =============== PARALLAX PRINCIPAL =============== -->
+  <div class="parallax-container" style="height: 400px; position: relative;">
+    <div class="parallax-text">
+      <h5>
+        La seguridad en arquitecturas serverless y de microservicios es 
+        esencial para proteger los recursos y datos sensibles. 
+        Implementar mecanismos robustos de autenticación y autorización,
+        como JWT, OAuth2 y API Gateways, es clave para garantizar la 
+        integridad y confidencialidad de las aplicaciones distribuidas.
+      </h5>
+    </div>
+    <div class="parallax">
+      <img src="img/parallax_p_title.png" alt="Imagen parallax">
+    </div>
+  </div>
+
+  <!-- =============== CONTENIDO PRINCIPAL =============== -->
+  <div class="divider"></div>
+  <br>
+  <h4>🔐 Autenticación y Autorización en Microservicios</h4>
+  <br>
+  <div class="container">
+    <div class="section">
+
+      <!-- ========== SECCIÓN 1: JWT ========== -->
+      <div class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li>
+              <a class="waves-effect" onclick="toggleText('JSON')">
+                <h4>✅ JSON Web Tokens (JWT)</h4>
+              </a>
+            </li>
+            <h5 id="JSON" class="toggle-text">
+              Los JWT son tokens compactos y auto-contenidos que transmiten 
+              información de forma segura entre partes. Se componen de tres 
+              partes: encabezado, payload y firma. El payload incluye claims 
+              como sub (identificador del usuario), exp (tiempo de expiración) 
+              y aud (audiencia). Al ser firmados digitalmente, permiten la 
+              verificación de su integridad sin necesidad de almacenar 
+              sesiones en el servidor, facilitando una autenticación sin 
+              estado (stateless). 
+            </h5>
+            <div class="parallax">
+              <img src="img/JSON Web Tokens (JWT).png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 2: OAuth 2.0 ========== -->
+      <div class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li>
+              <a class="waves-effect" onclick="toggleText('OAuth')">
+                <h4>🔁 OAuth 2.0</h4>
+              </a>
+            </li>
+            <h5 id="OAuth" class="toggle-text">
+              OAuth 2.0 es un protocolo de autorización que permite a las aplicaciones 
+              obtener acceso limitado a recursos protegidos en nombre de un usuario. 
+              Define varios flujos de autorización, como el Authorization Code Grant 
+              y el Client Credentials Grant, adaptándose a diferentes escenarios de 
+              autenticación. Es comúnmente utilizado junto con JWT para proporcionar 
+              tokens de acceso que contienen la información necesaria para autorizar 
+              solicitudes. 
+            </h5>
+            <div class="parallax">
+              <img src="img/OAuth.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 3: Rol del API Gateway ========== -->
+      <div class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li>
+              <a class="waves-effect" onclick="toggleText('Rol')">
+                <h4>🧭 Rol del API Gateway</h4>
+              </a>
+            </li>
+            <h5 id="Rol" class="toggle-text">
+              El API Gateway actúa como punto de entrada único para las solicitudes 
+              a los microservicios, centralizando la gestión de seguridad. Sus 
+              funciones clave incluyen: <br>
+              1. Validación de Tokens: Verifica la autenticidad y validez de los 
+              JWT antes de enrutar las solicitudes a los microservicios 
+              correspondientes. <br>
+              2. Control de Acceso: Aplica políticas de autorización basadas en los 
+              scopes o roles definidos en los tokens. <br>
+              <li>
+                <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('Rol2'),mostrarParallax('RolParalax2')">
+                  <p>Abrir/Cerrar</p>
+                </a>
+              </li>
+            </h5>
+            <div class="parallax">
+              <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 3.1: Detalle del API Gateway (oculto) ========== -->
+      <div id="RolParalax2" class="parallax-container oculto" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li></li>
+            <h5 id="Rol2" class="toggle-text">
+              3. Reenvío de Claims: Transfiere los claims relevantes a los 
+              microservicios a través de encabezados HTTP, permitiendo decisiones 
+              de autorización adicionales a nivel de servicio. <br>
+              Herramientas populares para implementar API Gateways incluyen Kong, 
+              Tyk, Apigee y las soluciones nativas de proveedores en la nube como 
+              AWS API Gateway y Azure API Management.
+            </h5>
+            <div class="parallax">
+              <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 4: Buenas Prácticas de Seguridad ========== -->
+      <div class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li>
+              <a class="waves-effect" onclick="toggleText('Seguridad')">
+                <h4>🛡️ Buenas Prácticas de Seguridad</h4>
+              </a>
+            </li>
+            <h5 id="Seguridad" class="toggle-text">
+              Para fortalecer la seguridad en arquitecturas serverless 
+              y de microservicios, se recomienda: <br>
+              1. Rotación de Claves: Cambiar periódicamente las claves 
+              de firma de JWT para mitigar riesgos en caso de compromisos. <br>
+              2. Política de Revocación de Tokens: Implementar mecanismos 
+              para invalidar tokens antes de su expiración en situaciones 
+              como cambios de contraseña o cierre de sesión. <br>
+              3. Validación de Scopes: Asegurar que los microservicios 
+              verifiquen los scopes o permisos incluidos en los tokens 
+              para autorizar acciones específicas. <br>
+              <li>
+                <a class="waves-effect ver-mas" onclick="animarVerMas(this),mostrarParallax('SeguridadParalax2'),toggleText('Seguridad2')">
+                  <p>Abrir/Cerrar</p>
+                </a>
+              </li>
+            </h5>
+            <div class="parallax">
+              <img src="img/seguridad.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 4.1: Detalle de Seguridad (oculto) ========== -->
+      <div id="SeguridadParalax2" class="parallax-container oculto" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li></li>
+            <h5 id="Seguridad2" class="toggle-text">
+              3. Monitoreo y Registro: Registrar y analizar eventos de autenticación 
+              y autorización para detectar actividades sospechosas o no autorizadas.<br>
+              Herramientas populares para implementar API Gateways incluyen Kong, 
+              4. Seguridad en la Comunicación: Utilizar HTTPS para todas las comunicaciones 
+              y considerar el uso de mTLS para la autenticación mutua entre servicios .
+              <div class="parallax">
+                <img src="img/seguridad.png" alt="Imagen parallax">
+              </div>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Cierre de div.section -->
+  </div> <!-- Cierre de div.container -->
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Seguridad</h5>
+          <p class="grey-text text-lighten-4">La seguridad 
+            en arquitecturas serverless y de microservicios
+             es clave: proteger cada servicio con 
+             autenticación y autorización sólidas como JWT, 
+             OAuth2 y API Gateways no es opcional, es 
+             esencial. En un sistema distribuido, cada punto 
+             de acceso es una responsabilidad.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="orange-text text-lighten-3" >@DM</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/funtion.js"></script>
+</body>
+</html>
