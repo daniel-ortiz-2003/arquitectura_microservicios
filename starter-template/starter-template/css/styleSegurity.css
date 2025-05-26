@@ -1,5 +1,4 @@
 /* ================== GLOBAL ================== */
-
 /* Oculta el desbordamiento horizontal en el cuerpo */
 body {
   overflow-x: hidden;
@@ -223,4 +222,26 @@ li,
   list-style: none;
   margin-left: 0;
   padding-left: 0;
+}
+
+/* ================== VIDEO RESPONSIVE ================== */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporción 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 auto;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

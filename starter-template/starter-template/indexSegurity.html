@@ -16,14 +16,20 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Seguridad</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">MENÚ</a></li>
-        <li><div class="divider"></div></li>
         <li><a class="waves-effect" href="index.html">Inicio</a></li>
+        <li><a href="#JWT" onclick="toggleText('JSON')">JSON Web Tokens (JWT)</a></li>
+        <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
+        <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
+        <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">MENÚ</a></li>
+        <li><a >MENÚ</a></li>
         <li><div class="divider"></div></li>
         <li><a class="waves-effect" href="index.html">Inicio</a></li>
+        <li><a href="#JWT" onclick="toggleText('JSON')">JSON Web Tokens (JWT)</a></li>
+        <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
+        <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
+        <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -74,14 +80,12 @@
     <div class="section">
 
       <!-- ========== SECCIÓN 1: JWT ========== -->
-      <div class="parallax-container" style="height: 400px; position: relative;">
+      <div id="JWT" class="parallax-container" style="height: 400px; position: relative;">
         <div class="parallax-text">
-          <div class="section scrollspy">
-            <li>
+          <div class="section scrollspy">  
               <a class="waves-effect" onclick="toggleText('JSON')">
                 <h4>✅ JSON Web Tokens (JWT)</h4>
               </a>
-            </li>
             <h5 id="JSON" class="toggle-text">
               Los JWT son tokens compactos y auto-contenidos que transmiten 
               información de forma segura entre partes. Se componen de tres 
@@ -100,14 +104,12 @@
       </div>
 
       <!-- ========== SECCIÓN 2: OAuth 2.0 ========== -->
-      <div class="parallax-container" style="height: 400px; position: relative;">
+      <div id="OTH" class="parallax-container" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
-            <li>
               <a class="waves-effect" onclick="toggleText('OAuth')">
                 <h4>🔁 OAuth 2.0</h4>
               </a>
-            </li>
             <h5 id="OAuth" class="toggle-text">
               OAuth 2.0 es un protocolo de autorización que permite a las aplicaciones 
               obtener acceso limitado a recursos protegidos en nombre de un usuario. 
@@ -125,14 +127,12 @@
       </div>
 
       <!-- ========== SECCIÓN 3: Rol del API Gateway ========== -->
-      <div class="parallax-container" style="height: 400px; position: relative;">
+      <div id="RA" class="parallax-container" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
-            <li>
               <a class="waves-effect" onclick="toggleText('Rol')">
                 <h4>🧭 Rol del API Gateway</h4>
               </a>
-            </li>
             <h5 id="Rol" class="toggle-text">
               El API Gateway actúa como punto de entrada único para las solicitudes 
               a los microservicios, centralizando la gestión de seguridad. Sus 
@@ -142,11 +142,9 @@
               correspondientes. <br>
               2. Control de Acceso: Aplica políticas de autorización basadas en los 
               scopes o roles definidos en los tokens. <br>
-              <li>
                 <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('Rol2'),mostrarParallax('RolParalax2')">
                   <p>Abrir/Cerrar</p>
                 </a>
-              </li>
             </h5>
             <div class="parallax">
               <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
@@ -176,7 +174,7 @@
       </div>
 
       <!-- ========== SECCIÓN 4: Buenas Prácticas de Seguridad ========== -->
-      <div class="parallax-container" style="height: 400px; position: relative;">
+      <div id="PS" class="parallax-container" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
             <li>
@@ -191,10 +189,7 @@
               de firma de JWT para mitigar riesgos en caso de compromisos. <br>
               2. Política de Revocación de Tokens: Implementar mecanismos 
               para invalidar tokens antes de su expiración en situaciones 
-              como cambios de contraseña o cierre de sesión. <br>
-              3. Validación de Scopes: Asegurar que los microservicios 
-              verifiquen los scopes o permisos incluidos en los tokens 
-              para autorizar acciones específicas. <br>
+              como cambios de contraseña o cierre de sesión. 
               <li>
                 <a class="waves-effect ver-mas" onclick="animarVerMas(this),mostrarParallax('SeguridadParalax2'),toggleText('Seguridad2')">
                   <p>Abrir/Cerrar</p>
@@ -214,10 +209,13 @@
           <div class="section scrollspy">
             <li></li>
             <h5 id="Seguridad2" class="toggle-text">
-              3. Monitoreo y Registro: Registrar y analizar eventos de autenticación 
+              3. Validación de Scopes: Asegurar que los microservicios 
+              verifiquen los scopes o permisos incluidos en los tokens 
+              para autorizar acciones específicas. <br>
+              4. Monitoreo y Registro: Registrar y analizar eventos de autenticación 
               y autorización para detectar actividades sospechosas o no autorizadas.<br>
               Herramientas populares para implementar API Gateways incluyen Kong, 
-              4. Seguridad en la Comunicación: Utilizar HTTPS para todas las comunicaciones 
+              5. Seguridad en la Comunicación: Utilizar HTTPS para todas las comunicaciones 
               y considerar el uso de mTLS para la autenticación mutua entre servicios .
               <div class="parallax">
                 <img src="img/seguridad.png" alt="Imagen parallax">
@@ -229,6 +227,16 @@
 
     </div> <!-- Cierre de div.section -->
   </div> <!-- Cierre de div.container -->
+
+  <!-- ============= Seccion de video ================================ -->
+<h4 style="text-align:center; margin-top:32px;">Recursos prácticos</h4>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/zDzvuTBrP1I"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <!-- ================= FOOTER ================= -->
   <footer class="page-footer orange">
@@ -253,7 +261,6 @@
       </div>
     </div>
   </footer>
-
   <!-- ================= SCRIPTS ================= -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
