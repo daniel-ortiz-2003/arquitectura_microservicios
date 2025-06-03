@@ -1,6 +1,19 @@
+<!-- =================================================================
+     DOCUMENTACIÓN DEL ARCHIVO
+     =================================================================
+     Nombre: indexSegurity.html
+     Descripción: Página web sobre Arquitectura de Microservicios
+     Autor: @Daniel ortiz, juan jose
+     Fecha: 3 de junio de 2025
+     ================================================================= -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- META TAGS Y RECURSOS
+         - Configuración de caracteres y viewport
+         - Hojas de estilo de Materialize y personalizadas
+         - Fuentes de Google Icons -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Arquitectura de Microservicios</title>
@@ -10,24 +23,27 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/styleSegurity.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+
 <body>
+    <!-- NAVEGACIÓN PRINCIPAL
+         - Menú responsive con Materialize
+         - Enlaces a secciones principales: Características, Componentes, Ventajas
+         - Incluye versión móvil con sidenav -->
   <!-- ================= NAVBAR ================= -->
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Arquitectura de Microservicios</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#CAR" onclick="toggleText('Carac')">Caracteristicas</a></li>
-        <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
-        <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
-        <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
+        <li><a href="#CAR" onclick="toggleText('Carac1')">Caracteristicas</a></li>
+        <li><a href="#CE" onclick="toggleText('CE1')">Componentes esenciales</a></li>
+        <li><a href="#VD" onclick="toggleText('VDT')">Ventajas y desventajas</a></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a >MENÚ</a></li>
         <li><div class="divider"></div></li>
-        <li><a href="#CAR" onclick="toggleText('Carac')">Caracteristicas</a></li>
-        <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
-        <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
-        <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
+        <li><a href="#CAR" onclick="toggleText('Carac1')">Caracteristicas</a></li>
+        <li><a href="#CE" onclick="toggleText('CE1')">Componentes esenciales</a></li>
+        <li><a href="#VD" onclick="toggleText('VDT')">Ventajas y desventajas de microservicios</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -83,23 +99,34 @@
   <div class="container">
     <div class="section">
 
-      <!-- ========== SECCIÓN 1: JWT ========== -->
-      <div id="CAR" class="parallax-container" style="height: 400px; position: relative;">
+      <!-- ================= SECCIÓN 1: CARACTERÍSTICAS PRINCIPALES =================
+           - Explicación detallada de Domain-Driven Design (DDD)
+           - Despliegue independiente y sus beneficios
+           - Implementación de escalabilidad por servicio
+           - Tecnologías utilizadas en microservicios
+           - Alta disponibilidad y resiliencia del sistema -->
+      <div id="CAR" class="parallax-container">
         <div class="parallax-text">
           <div class="section scrollspy">  
-              <a class="waves-effect" onclick="toggleText('Carac')">
+              <a class="waves-effect" style="text-align: left;" onclick="toggleText('Carac1')">
                 <h4>🔑 Caracteristicas principales</h4>
               </a>
-            <h5 id="Carac" class="toggle-text">
-              Los JWT son tokens compactos y auto-contenidos que transmiten 
-              información de forma segura entre partes. Se componen de tres 
-              partes: encabezado, payload y firma. El payload incluye claims 
-              como sub (identificador del usuario), exp (tiempo de expiración) 
-              y aud (audiencia). Al ser firmados digitalmente, permiten la 
-              verificación de su integridad sin necesidad de almacenar 
-              sesiones en el servidor, facilitando una autenticación sin 
-              estado (stateless). 
+            <h5 id="Carac1" class="toggle-text">
+              1. Descomposición por dominio (DDD - Domain-Driven Design)
+              Se divide la aplicación según las áreas de negocio. <br>
+              Por ejemplo, en una tienda online: <br>
+              Dominio de usuarios <br>
+              Dominio de productos <br>
+              Dominio de pedidos <br>
+              Esto ayuda a organizar mejor el código y responsabilidades. <br>
+              2. Despliegue independiente <br>
+              Cada microservicio puede actualizarse sin afectar al resto del sistema. 
+              Esto permite hacer cambios rápidos y seguros. <br>
+            <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('Carac2'),mostrarParallax('Caracteristica2')">
+                  <p>Abrir/Cerrar</p>
+            </a>
             </h5>
+            
             <div class="parallax">
               <img src="img/MicroServicios.png" alt="Imagen parallax">
             </div>
@@ -107,21 +134,58 @@
         </div>
       </div>
 
-      <!-- ========== SECCIÓN 2: OAuth 2.0 ========== -->
-      <div id="OTH" class="parallax-container" style="height: 400px; position: relative;">
+      <!-- ================= SECCIÓN 1.1: CARACTERÍSTICAS EXTENDIDAS =================
+           - Contenido expandible de características
+           - Se muestra/oculta mediante toggleText()
+           - Incluye detalles sobre:
+             * Escalabilidad específica
+             * Tecnologías utilizadas
+             * Alta disponibilidad -->
+      <div id="Caracteristica2" class="parallax-container oculto" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
-              <a class="waves-effect" onclick="toggleText('OAuth')">
-                <h4>🔁 OAuth 2.0</h4>
+            <li></li>
+            <h5 id="Carac2" class="toggle-text">
+              3. Escalabilidad específica por servicio <br>
+              Si el microservicio de pagos recibe muchas solicitudes, puedes escalar 
+              solo ese servicio, sin necesidad de aumentar recursos 
+              para toda la aplicación. <br>
+
+              4. Uso de diferentes tecnologías <br>
+              No todos los microservicios tienen que estar hechos con la misma tecnología.
+              Uno puede usar Node.js, otro Python, otro Java, etc., dependiendo de lo que 
+              sea más conveniente. <br>
+              
+              5. Alta disponibilidad y resiliencia <br>
+              Como los servicios están separados, si uno falla, no necesariamente cae toda 
+              la aplicación. Además, se pueden diseñar sistemas redundantes para evitar caídas.
+              <div class="parallax">
+                <img src="img/MicroServicios.png" alt="Imagen parallax">
+              </div>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SECCIÓN 2: COMPONENTES ESENCIALES =================
+           - Tipos de comunicación entre microservicios
+           - Implementación de REST y gRPC
+           - Sistemas de mensajería asíncrona
+           - Ejemplos prácticos de implementación
+           - Consideraciones de diseño -->
+      <div id="CE" class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+              <a class="waves-effect" onclick="toggleText('CE1')">
+                <h4>⚙️ Componentes esenciales</h4>
               </a>
-            <h5 id="OAuth" class="toggle-text">
-              OAuth 2.0 es un protocolo de autorización que permite a las aplicaciones 
-              obtener acceso limitado a recursos protegidos en nombre de un usuario. 
-              Define varios flujos de autorización, como el Authorization Code Grant 
-              y el Client Credentials Grant, adaptándose a diferentes escenarios de 
-              autenticación. Es comúnmente utilizado junto con JWT para proporcionar 
-              tokens de acceso que contienen la información necesaria para autorizar 
-              solicitudes. 
+            <h5 id="CE1" class="toggle-text">
+            Los microservicios deben comunicarse entre sí para funcionar como un 
+            todo cohesivo. Hay dos formas principales: <br>
+            <br>
+            <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('CE2'),mostrarParallax('C2P')">
+                  <p>Abrir/Cerrar</p>
+            </a>
             </h5>
             <div class="parallax">
               <img src="img/OAuth.png" alt="Imagen parallax">
@@ -130,23 +194,88 @@
         </div>
       </div>
 
-      <!-- ========== SECCIÓN 3: Rol del API Gateway ========== -->
-      <div id="RA" class="parallax-container" style="height: 400px; position: relative;">
+
+
+      <!-- ================= SECCIÓN 2.1: COMUNICACIÓN SINCRÓNICA =================
+           - Detalles de comunicación REST y gRPC
+           - Ejemplos prácticos de implementación
+           - Ventajas y desventajas
+           - Casos de uso específicos -->
+      <div id="C2P" class="parallax-container oculto" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
-              <a class="waves-effect" onclick="toggleText('Rol')">
-                <h4>🧭 Rol del API Gateway</h4>
+            <li></li>
+            <h5 id="CE2" class="toggle-text">
+              1. Comunicación sincrónica (REST, gRPC) <br>
+              Un servicio llama directamente a otro y espera una respuesta. <br>
+              ✅ Rápida y simple. <br>
+              ❌ Puede generar acoplamiento (si un servicio falla, el otro 
+              también se ve afectado).<br>
+              📌 Ejemplo:<br>
+              El microservicio de "pedidos" llama al microservicio de 
+              "inventario" para verificar si hay stock antes de aceptar un pedido.<br>
+              <br>
+              <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('CE3'),mostrarParallax('C3P')">
+                  <p>Abrir/Cerrar</p>
+            </a>
+            </h5>
+            <div class="parallax">
+              <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ================= SECCIÓN 2.2: COMUNICACIÓN ASINCRÓNICA =================
+           - Explicación de sistemas de mensajería
+           - Implementación de colas de mensajes
+           - Patrones de publicación/suscripción
+           - Ejemplos con Kafka y RabbitMQ -->
+      <div id="C3P" class="parallax-container oculto" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+            <li></li>
+            <h5 id="CE3" class="toggle-text">
+              2. Comunicación asincrónica (mensajería) <br>
+              Se usan colas o buses de eventos (como Kafka, RabbitMQ, AWS SQS).
+              Los servicios no hablan directamente, sino que publican mensajes 
+              que otros consumen cuando puedan. <br>
+              ✅ Menos acoplamiento, mayor resiliencia. <br>
+              ❌ Más complejo de implementar.<br>
+              📌 Ejemplo:<br>
+              Cuando un usuario hace un pedido, se publica un evento "pedido_creado".<br> 
+              El microservicio de notificaciones lo recibe y manda un email automáticamente
+            </h5>
+            <div class="parallax">
+              <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== SECCIÓN 3: VENTAJAS Y DESVENTAJAS =================
+           - Beneficios clave de los microservicios
+           - Desafíos y limitaciones
+           - Consideraciones de implementación
+           - Costos y recursos necesarios
+           - Mejores prácticas y recomendaciones -->
+      <div id="VD" class="parallax-container" style="height: 400px; position: relative;">
+        <div class="parallax-text">
+          <div class="section scrollspy">
+              <a class="waves-effect" onclick="toggleText('VDT')">
+                <h4>✅❌ Ventajas y desventajas de microservicios</h4>
               </a>
-            <h5 id="Rol" class="toggle-text">
-              El API Gateway actúa como punto de entrada único para las solicitudes 
-              a los microservicios, centralizando la gestión de seguridad. Sus 
-              funciones clave incluyen: <br>
-              1. Validación de Tokens: Verifica la autenticidad y validez de los 
-              JWT antes de enrutar las solicitudes a los microservicios 
-              correspondientes. <br>
-              2. Control de Acceso: Aplica políticas de autorización basadas en los 
-              scopes o roles definidos en los tokens. <br>
-                <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('Rol2'),mostrarParallax('RolParalax2')">
+            <h5 id="VDT" class="toggle-text">
+              ✅ Ventajas: <br>
+              Modularidad : La aplicación está dividida en partes pequeñas y manejables.<br>
+              Escalabilidad : Puedes escalar solo los servicios que necesitan más recursos.<br>
+              Flexibilidad tecnológica : Cada servicio puede usar la tecnología más adecuada.<br>
+              Equipos pequeños e independientes : Equipos pequeños pueden trabajar en paralelo 
+              en distintos servicios.<br>
+              Mayor disponibilidad : Si un servicio falla, no se cae toda la aplicación.<br>
+              <br>
+                <a class="waves-effect ver-mas" onclick="animarVerMas(this),toggleText('VDT2'),mostrarParallax('VD2')">
                   <p>Abrir/Cerrar</p>
                 </a>
             </h5>
@@ -158,17 +287,21 @@
       </div>
 
       <!-- ========== SECCIÓN 3.1: Detalle del API Gateway (oculto) ========== -->
-      <div id="RolParalax2" class="parallax-container oculto" style="height: 400px; position: relative;">
+      <div id="VD2" class="parallax-container oculto" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">
             <li></li>
-            <h5 id="Rol2" class="toggle-text">
-              3. Reenvío de Claims: Transfiere los claims relevantes a los 
-              microservicios a través de encabezados HTTP, permitiendo decisiones 
-              de autorización adicionales a nivel de servicio. <br>
-              Herramientas populares para implementar API Gateways incluyen Kong, 
-              Tyk, Apigee y las soluciones nativas de proveedores en la nube como 
-              AWS API Gateway y Azure API Management.
+            <h5 id="VDT2" class="toggle-text">
+              ❌ Desventajas: <br>
+              Complejidad operativa : Gestionar múltiples servicios requiere herramientas 
+              como Docker, Kubernetes, etc. <br>
+              Gestión de datos más compleja : Cada servicio tiene su propia base de datos, 
+              lo que complica transacciones ACID entre servicios.<br>
+              Más difícil de probar y depurar : Con tantos componentes interconectados, 
+              localizar errores puede ser complicado.<br>
+              Costos iniciales altos : Requiere infraestructura más robusta desde el principio.<br>
+              <br>
+
             </h5>
             <div class="parallax">
               <img src="img/Rol del API Gateway.png" alt="Imagen parallax">
@@ -177,84 +310,36 @@
         </div>
       </div>
 
-      <!-- ========== SECCIÓN 4: Buenas Prácticas de Seguridad ========== -->
-      <div id="PS" class="parallax-container" style="height: 400px; position: relative;">
-        <div class="parallax-text">
-          <div class="section scrollspy">
-            <li>
-              <a class="waves-effect" onclick="toggleText('Seguridad')">
-                <h4>🛡️ Buenas Prácticas de Seguridad</h4>
-              </a>
-            </li>
-            <h5 id="Seguridad" class="toggle-text">
-              Para fortalecer la seguridad en arquitecturas serverless 
-              y de microservicios, se recomienda: <br>
-              1. Rotación de Claves: Cambiar periódicamente las claves 
-              de firma de JWT para mitigar riesgos en caso de compromisos. <br>
-              2. Política de Revocación de Tokens: Implementar mecanismos 
-              para invalidar tokens antes de su expiración en situaciones 
-              como cambios de contraseña o cierre de sesión. 
-              <li>
-                <a class="waves-effect ver-mas" onclick="animarVerMas(this),mostrarParallax('SeguridadParalax2'),toggleText('Seguridad2')">
-                  <p>Abrir/Cerrar</p>
-                </a>
-              </li>
-            </h5>
-            <div class="parallax">
-              <img src="img/seguridad.png" alt="Imagen parallax">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ========== SECCIÓN 4.1: Detalle de Seguridad (oculto) ========== -->
-      <div id="SeguridadParalax2" class="parallax-container oculto" style="height: 400px; position: relative;">
-        <div class="parallax-text">
-          <div class="section scrollspy">
-            <li></li>
-            <h5 id="Seguridad2" class="toggle-text">
-              3. Validación de Scopes: Asegurar que los microservicios 
-              verifiquen los scopes o permisos incluidos en los tokens 
-              para autorizar acciones específicas. <br>
-              4. Monitoreo y Registro: Registrar y analizar eventos de autenticación 
-              y autorización para detectar actividades sospechosas o no autorizadas.<br>
-              Herramientas populares para implementar API Gateways incluyen Kong, 
-              5. Seguridad en la Comunicación: Utilizar HTTPS para todas las comunicaciones 
-              y considerar el uso de mTLS para la autenticación mutua entre servicios .
-              <div class="parallax">
-                <img src="img/seguridad.png" alt="Imagen parallax">
-              </div>
-            </h5>
-          </div>
-        </div>
-      </div>
-
+      
     </div> <!-- Cierre de div.section -->
   </div> <!-- Cierre de div.container -->
 
   <!-- ============= Seccion de video ================================ -->
 <h4 style="text-align:center; margin-top:32px;">Recursos prácticos</h4>
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/zDzvuTBrP1I"
+    <iframe src="https://www.youtube.com/embed/Ve8cei4ht6Y?spm=a2ty_o01.29997173.0.0.5156c921Zd7KMh&start=79"
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="page-footer orange">
+  <!-- ================= FOOTER =================
+       - Conclusiones principales
+       - Resumen de conceptos clave
+       - Información de contacto
+       - Enlaces relevantes
+       - Derechos de autor -->
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Seguridad</h5>
-          <p class="grey-text text-lighten-4">La seguridad 
-            en arquitecturas serverless y de microservicios
-             es clave: proteger cada servicio con 
-             autenticación y autorización sólidas como JWT, 
-             OAuth2 y API Gateways no es opcional, es 
-             esencial. En un sistema distribuido, cada punto 
-             de acceso es una responsabilidad.
+          <h5 class="white-text">📌 Conclusiones</h5>
+          <p class="grey-text text-lighten-4">La arquitectura de 
+            microservicios permite construir sistemas grandes de 
+            forma modular, flexible y escalable. Es ideal para 
+            empresas que tienen equipos distribuidos y necesitan 
+            evolucionar rápido.
           </p>
         </div>
       </div>
