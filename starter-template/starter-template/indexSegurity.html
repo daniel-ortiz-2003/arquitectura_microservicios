@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Seguridad</title>
+  <title>Arquitectura de Microservicios</title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -14,10 +14,9 @@
   <!-- ================= NAVBAR ================= -->
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Seguridad</a>
+      <a id="logo-container" href="#" class="brand-logo">Arquitectura de Microservicios</a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect" href="index.html">Inicio</a></li>
-        <li><a href="#JWT" onclick="toggleText('JSON')">JSON Web Tokens (JWT)</a></li>
+        <li><a href="#CAR" onclick="toggleText('Carac')">Caracteristicas</a></li>
         <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
         <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
         <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
@@ -25,8 +24,7 @@
       <ul id="nav-mobile" class="sidenav">
         <li><a >MENÚ</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="index.html">Inicio</a></li>
-        <li><a href="#JWT" onclick="toggleText('JSON')">JSON Web Tokens (JWT)</a></li>
+        <li><a href="#CAR" onclick="toggleText('Carac')">Caracteristicas</a></li>
         <li><a href="#OTH" onclick="toggleText('OAuth')">OAuth 2.0</a></li>
         <li><a href="#RA" onclick="toggleText('API')">Rol del API Gateway</a></li>
         <li><a href="#PS" onclick="toggleText('Seguridad')">Buenas Prácticas de Seguridad</a></li>
@@ -50,7 +48,7 @@
     </div>
     <div class="divider"></div>
     <br>
-    <h4>Seguridad en Arquitecturas Serverless y Microservicios</h4>
+    <h4>Arquitectura de Microservicios</h4>
     <div class="divider"></div>
     <br>
   </div>
@@ -59,11 +57,17 @@
   <div class="parallax-container" style="height: 400px; position: relative;">
     <div class="parallax-text">
       <h5>
-        La seguridad en arquitecturas serverless y de microservicios es 
-        esencial para proteger los recursos y datos sensibles. 
-        Implementar mecanismos robustos de autenticación y autorización,
-        como JWT, OAuth2 y API Gateways, es clave para garantizar la 
-        integridad y confidencialidad de las aplicaciones distribuidas.
+        Un microservicio es una forma de diseñar aplicaciones como una colección de pequeños servicios independientes, 
+        cada uno responsable de una única funcionalidad o parte del negocio, como por ejemplo.
+        En una tienda online:
+        <ul>
+          <li>Un microservicio maneja los usuarios (registro, login).</li>
+          <li>Otro se encarga de los productos (listado, inventario).</li>
+          <li> Otro gestiona los pedidos.</li>
+          <li>Otro procesa los pagos.</li>
+          <li>Y otro envía notificaciones por correo o SMS.</li>
+        </ul>
+        Cada uno puede desarrollarse, desplegarse y escalar de forma independiente.
       </h5>
     </div>
     <div class="parallax">
@@ -74,19 +78,19 @@
   <!-- =============== CONTENIDO PRINCIPAL =============== -->
   <div class="divider"></div>
   <br>
-  <h4>🔐 Autenticación y Autorización en Microservicios</h4>
+  <h4>🔐 Detalles de la Arquitectura de Microservicios</h4>
   <br>
   <div class="container">
     <div class="section">
 
       <!-- ========== SECCIÓN 1: JWT ========== -->
-      <div id="JWT" class="parallax-container" style="height: 400px; position: relative;">
+      <div id="CAR" class="parallax-container" style="height: 400px; position: relative;">
         <div class="parallax-text">
           <div class="section scrollspy">  
-              <a class="waves-effect" onclick="toggleText('JSON')">
-                <h4>✅ JSON Web Tokens (JWT)</h4>
+              <a class="waves-effect" onclick="toggleText('Carac')">
+                <h4>🔑 Caracteristicas principales</h4>
               </a>
-            <h5 id="JSON" class="toggle-text">
+            <h5 id="Carac" class="toggle-text">
               Los JWT son tokens compactos y auto-contenidos que transmiten 
               información de forma segura entre partes. Se componen de tres 
               partes: encabezado, payload y firma. El payload incluye claims 
@@ -97,7 +101,7 @@
               estado (stateless). 
             </h5>
             <div class="parallax">
-              <img src="img/JSON Web Tokens (JWT).png" alt="Imagen parallax">
+              <img src="img/MicroServicios.png" alt="Imagen parallax">
             </div>
           </div>
         </div>
